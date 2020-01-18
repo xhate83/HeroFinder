@@ -1,0 +1,23 @@
+<main class="main">
+
+    <div class="input-group">
+        <input type="text" class="form-control" name="filterSearch" placeholder="Hero's name..." [(ngModel)]="filterSearch">
+
+    </div>
+    <br/>
+
+    <div class=" flex ">
+
+        <div *ngFor="let info of search | filter:filterSearch; index as i;">
+            <div routerLink="/detail" class="tarjeta" *ngIf=" i <=2">
+                <p>{{ info.name }}</p>
+                <span><img class="bj" width="20px" alt="lupa" src="/assets/img/lupa.png"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</main>

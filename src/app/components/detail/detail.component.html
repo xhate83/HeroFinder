@@ -1,0 +1,91 @@
+<div>
+    <a>
+        <button class="home" routerLink="/home" type="button">Home</button>
+    </a>
+</div>
+
+
+
+<p class="centro">Enter the hero's name and you will see all their details!</p>
+
+<main class="main">
+    <div class="input-group">
+        <input type="text" class="form-control" name="filterSearch" placeholder="Hero's name..." [(ngModel)]="filterSearch">
+
+    </div>
+
+
+</main>
+
+
+<div *ngFor="let detail of details | filter:filterSearch; index as i;">
+    <div *ngIf=" i <=0">
+        <h3> {{ detail.name }}</h3>
+        <div class="flex1">
+            <img class="imgdetail" src="{{ detail.images.sm }}">
+            <div class="contenedorinfo1">
+                <p><strong>Powerstats:</strong></p>
+                <ul>
+                    <li><strong>Intelligence:</strong> {{ detail.powerstats.intelligence }}</li>
+                    <li><strong>Strength:</strong> {{ detail.powerstats.strength }}</li>
+                    <li><strong>Speed:</strong> {{ detail.powerstats.speed }}</li>
+                    <li><strong>Durability:</strong> {{ detail.powerstats.durability }}</li>
+                    <li><strong>Power:</strong> {{ detail.powerstats.power }}</li>
+                    <li><strong>Combat:</strong> {{ detail.powerstats.combat }}</li>
+
+                </ul>
+            </div>
+            <div class=" contenedorinfo11">
+                <p><strong>Appearance:</strong></p>
+                <ul>
+                    <li><strong>Gender:</strong> {{ detail.appearance.gender }}</li>
+                    <li><strong>Race:</strong> {{ detail.appearance.race }}</li>
+                    <li><strong>Height:</strong> {{ detail.appearance.height }}</li>
+                    <li><strong>Weight:</strong> {{ detail.appearance.weight }}</li>
+                    <li><strong>Eye Color:</strong> {{ detail.appearance.power }}</li>
+                    <li><strong>Hair Color:</strong> {{ detail.appearance.hairColor }}</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="contenedorinfo2">
+            <p><strong>Biography:</strong></p>
+            <ul class="flex ul2">
+                <div>
+                    <li><strong>Full Name:</strong> {{ detail.biography.fullName }}</li>
+                    <li><strong>Alter Egos:</strong> {{ detail.biography.alterEgos }}</li>
+                    <li><strong>Aliases:</strong> {{ detail.biography.aliases }}</li>
+                </div>
+                <div>
+                    <li><strong>Place Of Birth:</strong> {{ detail.biography.placeOfBirth }}</li>
+                    <li><strong>First Appearance:</strong> {{ detail.biography.firstAppearance }}</li>
+                    <li><strong>Publisher:</strong> {{ detail.biography.publisher }}</li>
+                    <li><strong>Alignment:</strong> {{ detail.biography.alignment }}</li>
+                </div>
+            </ul>
+        </div>
+        <div class="contenedorinfo2">
+            <p><strong>Work:</strong></p>
+            <ul class="flex ul2">
+
+                <li><strong>Occupation:</strong> {{ detail.work.occupation }}</li>
+                <li><strong>Base:</strong> {{ detail.work.base }}</li>
+
+            </ul>
+        </div>
+        <div class="contenedorinfo2">
+            <p><strong>Connections:</strong></p>
+            <ul class="flex ul2">
+
+                <li><strong>Group Affiliation:</strong> {{ detail.connections.groupAffiliation }}</li>
+                <li><strong>Relatives:</strong> {{ detail.connections.relatives }}</li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="centroimg">
+    <img width="80px" src="assets/img/engrane.png" alt="engrane">
+
+</div>

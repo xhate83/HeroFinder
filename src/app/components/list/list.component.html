@@ -1,0 +1,13 @@
+<div class=" flex row">
+    <div class="contenedor2 col-lg-2" *ngFor='let heroe of heroes; index as i;'>
+        <div class="contenedor1" *ngIf=" i <=19 ">
+            <img class="imghero " src="{{ heroe.images.sm }} ">
+            <h5>{{ heroe.name }}</h5>
+            <p>Intelligence: {{ heroe.powerstats.intelligence }}</p>
+            <p>Speed: {{ heroe.powerstats.speed }}</p>
+            <p>Power: {{ heroe.powerstats.power }}</p>
+            <p>Gender: {{ heroe.appearance.gender }}</p>
+            <p>Race: {{ heroe.appearance.race }}</p>
+        </div>
+    </div>
+</div>
